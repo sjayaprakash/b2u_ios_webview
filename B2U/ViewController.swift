@@ -11,14 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
-    let url = "http://demo.designwall.com/#dw-fixel"
-    
+    let url = "http://sjayaprakash.github.io/b2u_webapp/"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let requestURL = NSURL(string: url)
+        
         let request = NSMutableURLRequest(URL: requestURL!)
-        request.setValue("Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone", forHTTPHeaderField: "UserAgent")
+        /*
+        request.setValue("Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone", forHTTPHeaderField: "User_Agent")*/
+        
         /*
         var cookieProperties = NSMutableDictionary()
         cookieProperties.setObject("mobileapp", forKey: NSHTTPCookieName)
@@ -31,14 +33,13 @@ class ViewController: UIViewController {
         var cookie = NSHTTPCookie(properties: cookieProperties)
         NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie!)
         */
-        /*
-        var dictionary = ["Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone":"UserAgent"]
-        NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)*/
+
         
         webView.loadRequest(request)
         webView.scalesPageToFit = true
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
