@@ -24,6 +24,8 @@
 		96E9C6181A9D2212009385DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C6171A9D2212009385DA /* Images.xcassets */; };
 		96E9C61B1A9D2212009385DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C6191A9D2212009385DA /* LaunchScreen.xib */; };
 		96E9C6271A9D2212009385DA /* B2UTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C6261A9D2212009385DA /* B2UTests.swift */; };
+		D0D219521ACA9B7000879ADD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D219511ACA9B7000879ADD /* Foundation.framework */; };
+		D0D219541ACA9B7600879ADD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D219531ACA9B7600879ADD /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		96E9C6201A9D2212009385DA /* B2UTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = B2UTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E9C6251A9D2212009385DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E9C6261A9D2212009385DA /* B2UTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2UTests.swift; sourceTree = "<group>"; };
+		D0D219511ACA9B7000879ADD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0D219531ACA9B7600879ADD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D219541ACA9B7600879ADD /* UIKit.framework in Frameworks */,
+				D0D219521ACA9B7000879ADD /* Foundation.framework in Frameworks */,
 				96936A481AC6BADC0012D82A /* SystemConfiguration.framework in Frameworks */,
 				96936A461AC6BAD70012D82A /* Security.framework in Frameworks */,
 				96936A441AC6BAD20012D82A /* QuickLook.framework in Frameworks */,
@@ -90,6 +96,8 @@
 		96936A261AC6B9870012D82A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0D219531ACA9B7600879ADD /* UIKit.framework */,
+				D0D219511ACA9B7000879ADD /* Foundation.framework */,
 				96936A471AC6BADC0012D82A /* SystemConfiguration.framework */,
 				96936A451AC6BAD70012D82A /* Security.framework */,
 				96936A431AC6BAD20012D82A /* QuickLook.framework */,
@@ -426,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
@@ -433,6 +442,7 @@
 				INFOPLIST_FILE = B2U/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -441,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
@@ -448,6 +459,7 @@
 				INFOPLIST_FILE = B2U/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
