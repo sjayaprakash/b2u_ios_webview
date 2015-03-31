@@ -5,20 +5,20 @@
 //  Created by Jason Wong on 2/24/15.
 //  Copyright (c) 2015 Jason Wong. All rights reserved.
 //
-
+ 
 import UIKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
-    let url = "http://m.facebook.com"
+    let url = "http://demo.designwall.com/#dw-fixel"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let requestURL = NSURL(string: url)
-        let request = NSURLRequest(URL: requestURL!)
-        
+        let request = NSMutableURLRequest(URL: requestURL!)
+        request.setValue("Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone", forHTTPHeaderField: "UserAgent")
         /*
         var cookieProperties = NSMutableDictionary()
         cookieProperties.setObject("mobileapp", forKey: NSHTTPCookieName)
@@ -31,9 +31,12 @@ class ViewController: UIViewController {
         var cookie = NSHTTPCookie(properties: cookieProperties)
         NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie!)
         */
+        /*
+        var dictionary = ["Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone":"UserAgent"]
+        NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)*/
         
         webView.loadRequest(request)
-        webView.scalesPageToFit = false
+        webView.scalesPageToFit = true
         
     }
 
