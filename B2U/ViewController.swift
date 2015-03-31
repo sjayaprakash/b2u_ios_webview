@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         
         webView.loadRequest(request)
         webView.scalesPageToFit = true
+        webView.frame = self.view.bounds
         
     }
     
