@@ -19,7 +19,6 @@ class ViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let requestURL = NSURL(string: url)
-        
         let request = NSMutableURLRequest(URL: requestURL!)
         
         self.edgesForExtendedLayout = UIRectEdge.None
@@ -30,6 +29,10 @@ class ViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(request)
         //webView.scalesPageToFit = true
         //webView.frame = self.view.bounds
+
+        
+        webView.loadRequest(request)
+        webView.scalesPageToFit = true
         
         
         webView.frame = CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height - 10);
@@ -38,7 +41,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
         webView.delegate = self
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

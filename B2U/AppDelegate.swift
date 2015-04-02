@@ -14,19 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        
-        var dictionary = ["User_Agent":"Mozilla/5.0 ;iPhone; CPU iPhone OS 7_1_2 like Mac OS X; AppleWebKit/537.51.2 ;KHTML, like Gecko; Version/7.0 Mobile/11D257 Safari/9537.53"]
-        NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)
-        
         // Override point for customization after application launch.
         
         BITHockeyManager.sharedHockeyManager().configureWithIdentifier("5aad4dc9a83cd981d69f5735dc2a7d71")
         BITHockeyManager.sharedHockeyManager().startManager()
         BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
-
+        
         return true
     }
 
