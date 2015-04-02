@@ -8,43 +8,66 @@
  
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
+    
     let url = "http://sjayaprakash.github.io/b2u_webapp/"
+    let returnURL = "http://sjayaprakash.github.io/b2u_webapp/profile.html"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let requestURL = NSURL(string: url)
         
         let request = NSMutableURLRequest(URL: requestURL!)
-        /*
-        request.setValue("Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone", forHTTPHeaderField: "User_Agent")*/
         
-        /*
-        var cookieProperties = NSMutableDictionary()
-        cookieProperties.setObject("mobileapp", forKey: NSHTTPCookieName)
-        cookieProperties.setObject("1", forKey: NSHTTPCookieValue)
-        cookieProperties.setObject("http://google.com", forKey: NSHTTPCookieName)
-        cookieProperties.setObject("http://google.com", forKey: NSHTTPCookieOriginURL)
-        cookieProperties.setObject("/", forKey: NSHTTPCookiePath)
-        cookieProperties.setObject("0", forKey: NSHTTPCookieVersion)
-        
-        var cookie = NSHTTPCookie(properties: cookieProperties)
-        NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie!)
-        */
+        self.edgesForExtendedLayout = UIRectEdge.None
+        self.extendedLayoutIncludesOpaqueBars=false
+        self.automaticallyAdjustsScrollViewInsets=false
 
         
         webView.loadRequest(request)
-        webView.scalesPageToFit = true
-        webView.frame = self.view.bounds
+        //webView.scalesPageToFit = true
+        //webView.frame = self.view.bounds
         
+        
+        webView.frame = CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height - 10);
+
+        webView.scrollView.bounces = false
+        
+        webView.delegate = self
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webView(webView: UIWebView!, didFailLoadWithError error: NSError!) {
+        print("Webview fail with error \(error)");
+    }
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest r: NSURLRequest, navigationType nt: UIWebViewNavigationType) -> Bool {
+        
+        let url = r.URL.absoluteString as NSString!
+        let ifContains = "https://m.facebook.com/v2.3/dialog/oauth?redirect_uri" as NSString
+        
+        if(url.containsString(ifContains)) {
+            let requestURL = NSURL(string: returnURL)
+            let request = NSMutableURLRequest(URL: requestURL!)
+            webView.loadRequest(request)
+        }
+
+        return true;
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView!) {
+        //print("Webview started Loading")
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView!) {
+        //print("Webview did finish load")
     }
 
 

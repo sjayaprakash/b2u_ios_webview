@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9642713C1ACCD80800CB66EB /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642713B1ACCD80800CB66EB /* CustomWebView.swift */; };
 		96936A361AC6BA630012D82A /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96936A321AC6BA630012D82A /* HockeySDK.framework */; };
 		96936A371AC6BA630012D82A /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 96936A341AC6BA630012D82A /* HockeySDK.xcconfig */; };
 		96936A381AC6BA630012D82A /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96936A351AC6BA630012D82A /* HockeySDKResources.bundle */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9642713B1ACCD80800CB66EB /* CustomWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 		96936A321AC6BA630012D82A /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		96936A341AC6BA630012D82A /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
 		96936A351AC6BA630012D82A /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				96E9C6101A9D2212009385DA /* AppDelegate.swift */,
 				96E9C6121A9D2212009385DA /* ViewController.swift */,
+				9642713B1ACCD80800CB66EB /* CustomWebView.swift */,
 				96E9C6141A9D2212009385DA /* Main.storyboard */,
 				96E9C6171A9D2212009385DA /* Images.xcassets */,
 				96E9C6191A9D2212009385DA /* LaunchScreen.xib */,
@@ -301,6 +304,7 @@
 			files = (
 				96E9C6131A9D2212009385DA /* ViewController.swift in Sources */,
 				96E9C6111A9D2212009385DA /* AppDelegate.swift in Sources */,
+				9642713C1ACCD80800CB66EB /* CustomWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
@@ -433,6 +438,7 @@
 				INFOPLIST_FILE = B2U/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -441,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
@@ -448,6 +455,7 @@
 				INFOPLIST_FILE = B2U/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
